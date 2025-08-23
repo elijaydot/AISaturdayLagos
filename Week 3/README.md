@@ -11,19 +11,18 @@ The analysis is conducted using a Python-based Jupyter Notebook, leveraging powe
 * **Source:** The analysis uses the netflix\_titles.csv dataset.  
 * **Size:** 8,807 titles (rows) and 12 features (columns).  
 * **Original Features:**
-
-* show\_id: Unique ID for each title.  
-* type: Whether the title is a "Movie" or "TV Show".  
-* title: Name of the title.  
-* director: Name of the director.  
-* cast: List of actors featured in the title.  
-* country: Country/countries where the title was produced.  
-* date\_added: The date the title was added to Netflix.  
-* release\_year: The year the title was originally released.  
-* rating: The content's rating (e.g., TV-MA, PG-13, R).  
-* duration: Length of the movie (in minutes) or number of seasons (for TV shows).  
-* listed\_in: Genres and categories describing the title.  
-* description: A brief synopsis of the plot.
+  * show\_id: Unique ID for each title.  
+  * type: Whether the title is a "Movie" or "TV Show".  
+  * title: Name of the title.  
+  * director: Name of the director.  
+  * cast: List of actors featured in the title.  
+  * country: Country/countries where the title was produced.  
+  * date\_added: The date the title was added to Netflix.  
+  * release\_year: The year the title was originally released.  
+  * rating: The content's rating (e.g., TV-MA, PG-13, R).  
+  * duration: Length of the movie (in minutes) or number of seasons (for TV shows).  
+  * listed\_in: Genres and categories describing the title.  
+  * description: A brief synopsis of the plot.
 
 ## **Methodology & Data Cleaning**
 
