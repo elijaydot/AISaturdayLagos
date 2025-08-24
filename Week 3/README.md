@@ -64,7 +64,7 @@ The cleaned dataset was then analyzed to extract meaningful insights.
 
 1. ### **Content Type Distribution (Movies vs. TV Shows)**
 
-![Content Type Distribution (Movies vs. TV Shows)][images/picture1.jpg]
+![Content Type Distribution (Movies vs. TV Shows)](images/picture1.jpg)
 
 **Finding:** Netflix's catalog is heavily skewed towards **Movies**.  
 **Visualization:** A count plot was used to visualize the disparity.  
@@ -72,7 +72,7 @@ The cleaned dataset was then analyzed to extract meaningful insights.
 
 2. ### **Content Rating Analysis**
 
-![Content Rating Analysis][images/picture2.jpg]
+![Content Rating Analysis](images/picture2.jpg)
 
 **Finding:** The majority of content on Netflix is geared towards **mature audiences**.  
 **Visualization:** A count plot was generated, ordered by the frequency of each rating.  
@@ -84,7 +84,7 @@ The cleaned dataset was then analyzed to extract meaningful insights.
 
 3. ### **Distribution of Genres**
 
-![Distribution of Genres][images/picture3.jpg]
+![Distribution of Genres](images/picture3.jpg)
 
 **Findings**
   * "International Movies" is the most common genre by a very large margin.  
@@ -105,7 +105,7 @@ The cleaned dataset was then analyzed to extract meaningful insights.
 
 4. ### **Distribution of release years**
 
-![Distribution of release years][images/picture4.jpg]
+![Distribution of release years](images/picture4.jpg)
 
 **Findings:** 
   The vast majority of content was released after the year 2000, with a dramatic and exponential increase beginning around the 2010s. Very little content exists from before 1980\.
@@ -121,7 +121,7 @@ This is not an archive of classic films but a modern, actively updated content 
 
 5. ### **Distribution of titles added over time (yearly)**
 
-![Distribution of titles added over time (yearly)][images/picture5.jpg]
+![Distribution of titles added over time (yearly)](images/picture5.jpg)
 
 **Findings:** 
   The number of new titles added each year was low and stable until approximately 2014\. After 2014, there was a period of massive, rapid growth that peaked around 2018-2019, followed by a significant decline.
@@ -137,7 +137,7 @@ This trajectory is classic of a maturing streaming service: an **initial slow b
 
 6. ### **Distribution of titles added over time (monthly)**
 
-![Distribution of titles added over time (monthly)][images/picture6.jpg]
+![Distribution of titles added over time (monthly)](images/picture6.jpg)
 
 **Findings**:   
   The number of new titles added varies significantly by month. There are clear peaks (likely in certain months like January, May, or December) and troughs throughout the year, suggesting a seasonal release pattern.
@@ -153,7 +153,7 @@ Content releases are highly planned. The platform times its new additions to ali
 
 7. ### **Distribution of Most Frequent Movie Genres**
 
-![Distribution of Most Frequent Movie Genres][images/picture7.jpg]
+![Distribution of Most Frequent Movie Genres](images/picture7.jpg)
 
 **Findings:**   
   "International Movies" is the dominant movie genre by a very large margin. It is followed by broad categories like Dramas, Comedies, and Documentaries. More niche genres like "Music & Musicals" round out the bottom of the top 10\.
@@ -169,7 +169,7 @@ The platform's movie strategy prioritizes diversity and international appeal, us
 
 8. ### **Distribution of Most Frequent TV Shows Genres**
 
-![Distribution of Most Frequent TV Shows Genres][images/picture8.jpg]
+![Distribution of Most Frequent TV Shows Genres](images/picture8.jpg)
 
 **Findings:**   
 "International TV Shows" is the most common TV genre. It is followed by mainstream categories like "TV Dramas" and "TV Comedies." The list includes a mix of reality, kids, and niche genres like "Anime Series."
@@ -185,7 +185,7 @@ The TV catalog is designed for global and diverse viewer preferences, combining 
 
 9. ### **Distribution of Frequent Directors on Netflix**
 
-![Distribution of Frequent Directors on Netflix][images/picture9.jpg]
+![Distribution of Frequent Directors on Netflix](images/picture9.jpg)
 
 **Findings:**   
   The most frequent directors have a relatively low number of titles (around 20 or fewer). The list features a mix of international names (e.g., Rajiv Chilaka, Cathy Garcia-Molina) and well-known Hollywood directors (Martin Scorsese).
@@ -201,7 +201,7 @@ Netflix's strategy is one of volume and variety, not auteur-driven curation. It 
 
 10. ### **Distribution of Frequent Actors on Netflix**
 
-![Distribution of Frequent Actors on Netflix][images/picture10.jpg]
+![Distribution of Frequent Actors on Netflix](images/picture10.jpg)
 
 **Findings:**
   The most frequent actors appear in a moderate number of titles (around 30 or fewer). The list is dominated by actors from Indian cinema (e.g., Anupam Kher, Shah Rukh Khan) and Japanese voice actors (e.g., Takahiro Sakurai).
@@ -219,7 +219,7 @@ The actor data reinforces that the platform's core strategy is **global and vol
 
 1. #### **The top 10 countries producing Netflix content**
 
-   ![Top 10 countries producing Netflix content][images/picture11.jpg]
+   ![Top 10 countries producing Netflix content](images/picture11.jpg)
 
    **Findings**: 
     The United States produces the vast majority of content, with over 3000 titles. India is a distant second, followed by the United Kingdom, Canada, and France. The output of other countries is significantly lower.
@@ -235,7 +235,7 @@ The actor data reinforces that the platform's core strategy is **global and vol
 
 2. #### **A world map visualization of content production**
 
-![A world map visualization of content production][images/picture12.jpg]
+![A world map visualization of content production](images/picture12.jpg)
 
   **Findings**:
     The United States is the dominant country of production by a very large margin. A "long tail" of many other countries (e.g., India, UK, Japan, South Korea) contributes the remaining content, each with significantly smaller counts.
