@@ -23,6 +23,7 @@ The analysis is conducted using a Python-based Jupyter Notebook, leveraging powe
   * duration: Length of the movie (in minutes) or number of seasons (for TV shows).  
   * listed\_in: Genres and categories describing the title.  
   * description: A brief synopsis of the plot.
+  data source: [kaggle](https://www.kaggle.com/datasets/shivamb/netflix-shows)
 
 ## **Methodology & Data Cleaning**
 
