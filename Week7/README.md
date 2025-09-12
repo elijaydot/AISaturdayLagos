@@ -1,12 +1,18 @@
-# Week 7: Advanced Classification Modeling and Evaluation
+# Week 7: Advanced Classification and Regression Modeling
 
-This project extends the SMS spam detection analysis from Week 6 by introducing non-linear models, robust evaluation techniques like k-fold cross-validation, and hyperparameter tuning to identify the best-performing model for classifying SMS messages.
+This week's project covers two distinct machine learning tasks: a classification problem to detect SMS spam and a regression problem to predict California housing prices. Both analyses explore linear and non-linear models, robust evaluation techniques like k-fold cross-validation, and hyperparameter tuning.
+
+---
+
+## Part 1: SMS Spam Classification Analysis
+
+This project extends the SMS spam detection analysis from Week 6 by introducing non-linear models and more advanced evaluation techniques to identify the best-performing model for classifying SMS messages.
 
 *   **Notebook**: `Week_7_Linear_Classification_Non_Linear_Modeling.ipynb`
 *   **Dataset**: SMS Spam Collection from the UCI Machine Learning Repository.
 *   **Data Source**: https://raw.githubusercontent.com/justmarkham/pycon-2016-tutorial/master/data/sms.tsv
 
-## Project Methodology
+### Classification Methodology
 
 The analysis follows a structured workflow to build, compare, and optimize a suite of classification models.
 
@@ -35,11 +41,11 @@ The analysis follows a structured workflow to build, compare, and optimize a sui
     *   The tuned models were evaluated on the held-out test set.
     *   A detailed comparison was conducted based on key metrics like Accuracy, Precision, Recall, and F1-score, with a special focus on identifying spam (class 1).
 
-## Model Performance and Comparison
+### Classification Model Performance and Comparison
 
 The project involved a multi-stage comparison to determine the most effective model.
 
-### Initial Model Performance (Before Tuning)
+#### Initial Model Performance (Before Tuning)
 
 Even before extensive tuning, the ensemble and more complex models showed strong performance. The Support Vector Machine (SVM) stood out with the highest accuracy and an excellent balance of precision and recall for the spam class.
 
@@ -47,14 +53,14 @@ Even before extensive tuning, the ensemble and more complex models showed strong
 *   **Random Forest Accuracy**: 98.1%
 *   **XGBoost Accuracy**: 97.6%
 
-### Cross-Validation Results
+#### Cross-Validation Results
 
 The 5-fold cross-validation confirmed the superiority of the more advanced models.
 
 *   **Highest Mean Accuracy**: The **SVM** model achieved the highest average accuracy across the folds (**97.8%**), indicating strong and reliable performance.
 *   **Most Consistent Model**: The **XGBoost** model had the lowest standard deviation (**0.0027**), making it the most stable and consistent performer across different data subsets.
 
-### Tuned Model Performance
+#### Tuned Model Performance
 
 After hyperparameter tuning with `GridSearchCV`, the models were re-evaluated on the test set. This final comparison is the most critical for selecting the best model.
 
@@ -78,11 +84,70 @@ After hyperparameter tuning with `GridSearchCV`, the models were re-evaluated on
 *   **Precision vs. Recall Trade-off**: The **Random Forest** model achieved perfect precision (1.00), meaning every message it flagged as spam was indeed spam. However, it missed more spam messages (25 false negatives) compared to Logistic Regression and SVM.
 *   **Overall Winner**: Considering the critical need to catch as much spam as possible (high recall) while maintaining high accuracy, the **tuned Logistic Regression model** is the best-performing model for this task.
 
-## Conclusion
+---
 
-This comprehensive analysis demonstrates the power of building, evaluating, and tuning a range of machine learning models. While simpler models like Decision Trees provide a good baseline, more sophisticated algorithms like SVM, Random Forest, and boosting models (XGBoost, CatBoost) deliver superior performance.
+## Part 2: California Housing Price Regression Analysis
 
-Through rigorous cross-validation and hyperparameter tuning, we identified that a **tuned Logistic Regression model** provides the best balance of accuracy and high recall, making it the most effective and reliable choice for this SMS spam detection problem.
+This project analyzes the California Housing dataset to predict median house values. It starts with a baseline Linear Regression model and progresses to more complex non-linear models, using cross-validation and hyperparameter tuning to find the most accurate regressor.
+
+*   **Notebook**: `Week_7_Linear_Regression_Non_Linear_Modeling.ipynb`
+*   **Dataset**: California Housing from Scikit-learn.
+
+### Regression Methodology
+
+1.  **Data Preparation and EDA**:
+    *   The California Housing dataset was loaded. It contains numerical features like median income, house age, and location coordinates.
+    *   The data was checked for missing values (none were found).
+    *   Outliers were identified using box plots and handled by capping extreme values to reduce their influence on the model.
+    *   Exploratory Data Analysis (EDA) included visualizing feature distributions with histograms and examining relationships using a correlation heatmap and scatter plots.
+
+2.  **Feature Engineering**:
+    *   All features were scaled using `StandardScaler` to ensure that no single feature disproportionately influences the model due to its scale.
+
+3.  **Model Building and Evaluation**:
+    *   The dataset was split into training (80%) and testing (20%) sets.
+    *   A baseline **Linear Regression** model was built.
+    *   Four non-linear models were also trained and evaluated: **Decision Tree, Random Forest, XGBoost, and CatBoost**.
+
+4.  **K-Fold Cross-Validation**:
+    *   To get a robust estimate of performance, 5-fold cross-validation was performed on the non-linear models.
+
+5.  **Hyperparameter Tuning**:
+    *   `GridSearchCV` was used to find the optimal hyperparameters for the best-performing model, **CatBoost**.
+
+6.  **Final Evaluation and Comparison**:
+    *   All models, including the tuned CatBoost model, were evaluated on the test set using metrics like Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and R-squared (R2).
+
+### Regression Model Performance and Comparison
+
+The models were compared based on their ability to predict house prices accurately.
+
+#### Performance Summary of All Models (on Test Set)
+
+| Model                | MSE    | RMSE   | R-squared (R2) |
+| :------------------- | :----- | :----- | :------------- |
+| **CatBoost (Tuned)** | **0.1942** | **0.4406** | **0.8464**     |
+| CatBoost (Untuned)   | 0.1904 | 0.4363 | 0.8494         |
+| XGBoost              | 0.2025 | 0.4500 | 0.8398         |
+| Random Forest        | 0.2427 | 0.4927 | 0.8080         |
+| Linear Regression    | 0.4424 | 0.6651 | 0.6501         |
+| Decision Tree        | 0.4864 | 0.6974 | 0.6153         |
+
+#### Key Insights from the Regression Comparison:
+
+*   **Non-Linear Models Excel**: All non-linear ensemble and boosting models (CatBoost, XGBoost, Random Forest) significantly outperformed the baseline Linear Regression and the single Decision Tree model. This indicates that the relationships between the features and house prices are complex and non-linear.
+*   **Top Performers**: **CatBoost** and **XGBoost** were the clear top performers, both achieving an R-squared score of approximately **84-85%**. This means they could explain about 85% of the variance in house prices.
+*   **Tuning Impact**: In this case, hyperparameter tuning for CatBoost did not lead to a significant improvement over the default settings. The untuned model performed slightly better on this particular test split, which can sometimes happen. However, the cross-validation results confirmed CatBoost's overall robustness.
+*   **Overall Winner**: The **CatBoost model** (both tuned and untuned) demonstrated the highest predictive accuracy, making it the best choice for this regression task.
+
+---
+
+## Overall Conclusion
+
+These two analyses demonstrate the power of building, evaluating, and tuning a range of machine learning models for both classification and regression tasks.
+
+*   For the **SMS Spam Classification** task, a **tuned Logistic Regression model** provided the best balance of accuracy and high recall, making it the most effective choice.
+*   For the **California Housing Price Regression** task, the **CatBoost model** proved to be the most accurate, effectively capturing the complex, non-linear relationships in the data.
 
 ## Technologies Used
 
@@ -90,7 +155,7 @@ Through rigorous cross-validation and hyperparameter tuning, we identified that 
 *   **Jupyter Notebook**: Interactive development environment.
 *   **Pandas**: Data manipulation and analysis.
 *   **Scikit-learn**: For data preprocessing, model building, and evaluation (`TfidfVectorizer`, `LogisticRegression`, `SVC`, `DecisionTreeClassifier`, `RandomForestClassifier`, `GridSearchCV`, `cross_val_score`).
-*   **NLTK**: For natural language processing tasks like stop word removal.
+*   **NLTK**: For natural language processing tasks (stop word removal).
 *   **XGBoost**: For implementing the XGBoost classifier.
 *   **CatBoost**: For implementing the CatBoost classifier.
 *   **Matplotlib & Seaborn**: For data visualization.
@@ -104,4 +169,6 @@ Through rigorous cross-validation and hyperparameter tuning, we identified that 
     ```bash
     pip install pandas scikit-learn matplotlib seaborn nltk xgboost catboost
     ```
-3.  Run the `Week_7_Linear_Classification_Non_Linear_Modeling.ipynb` notebook to see the full analysis and code execution.
+3.  Run the notebooks to see the full analysis and code execution:
+    *   `Week_7_Linear_Classification_Non_Linear_Modeling.ipynb`
+    *   `Week_7_Linear_Regression_Non_Linear_Modeling.ipynb`
